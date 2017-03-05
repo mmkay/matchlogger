@@ -24,7 +24,7 @@ nbdist/
 .nb-gradle/
 
 # properties files
-/src/main/resources/application-dev.properties
-/src/main/resources/application-staging.properties
-/src/main/resources/application-prod.properties
+/backend/src/main/resources/application-dev.properties
+/backend/src/main/resources/application-staging.properties
+/backend/src/main/resources/application-prod.properties
 
