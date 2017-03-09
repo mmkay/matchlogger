@@ -1,4 +1,4 @@
-package pl.mmkay;
+package pl.mmkay.matchlogger;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
