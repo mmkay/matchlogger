@@ -1,8 +1,20 @@
 <databaseChangeLog
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
-        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
-    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet id="20170319-1" author="mkulewicz">
+        <createTable tableName="ml_user">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="full_name" type="text"/>
+            <column name="email" type="text"/>
+            <column name="principal_id" type="text"/>
+            <column name="photo" type="text"/>
+            <column name="created" type="datetime"/>
+            <column name="last_login" type="datetime"/>
+            <column name="login_type" type="enum('GOOGLE')" defaultValue="GOOGLE"/>
+        </createTable>
+    </changeSet>
 </databaseChangeLog>
 
