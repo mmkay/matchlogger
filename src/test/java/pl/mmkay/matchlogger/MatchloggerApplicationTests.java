@@ -1,4 +1,4 @@
-package pl.mmkay;
+package pl.mmkay.matchlogger;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
