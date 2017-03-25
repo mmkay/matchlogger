@@ -39,5 +39,20 @@
             <column name="flag_photo">https://upload.wikimedia.org/wikipedia/en/thumb/1/12/Flag_of_Poland.svg/23px-Flag_of_Poland.svg.png</column>
         </insert>
     </changeSet>
+    <changeSet id="20170325-3" author="mkulewicz">
+        <createTable tableName="team">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="text"/>
+            <column name="country_id" type="int"/>
+            <column name="crest_photo" type="text"/>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="team"
+                                 baseColumnNames="country_id"
+                                 constraintName="fk_team_country"
+                                 referencedTableName="country"
+                                 referencedColumnNames="id"/>
+    </changeSet>
 </databaseChangeLog>
 
