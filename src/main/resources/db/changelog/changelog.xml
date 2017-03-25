@@ -16,5 +16,28 @@
             <column name="login_type" type="enum('GOOGLE')" defaultValue="GOOGLE"/>
         </createTable>
     </changeSet>
+    <changeSet id="20170325-1" author="mkulewicz">
+        <createTable tableName="country">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="text"/>
+            <column name="alpha2_code" type="varchar(2)"/>
+            <column name="alpha3_code" type="varchar(3)"/>
+            <column name="fifa_code" type="varchar(3)"/>
+            <column name="ioc_code" type="varchar(3)"/>
+            <column name="flag_photo" type="text"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="20170325-2" author="mkulewicz">
+        <insert tableName="country">
+            <column name="name">Poland</column>
+            <column name="alpha2_code">PL</column>
+            <column name="alpha3_code">POL</column>
+            <column name="fifa_code">POL</column>
+            <column name="ioc_code">POL</column>
+            <column name="flag_photo">https://upload.wikimedia.org/wikipedia/en/thumb/1/12/Flag_of_Poland.svg/23px-Flag_of_Poland.svg.png</column>
+        </insert>
+    </changeSet>
 </databaseChangeLog>
 
