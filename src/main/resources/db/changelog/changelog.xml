@@ -54,5 +54,25 @@
                                  referencedTableName="country"
                                  referencedColumnNames="id"/>
     </changeSet>
+    <changeSet id="20170329-1" author="mkulewicz">
+        <createTable tableName="match">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="first_team_id" type="int"/>
+            <column name="second_team_id" type="int"/>
+            <column name="match_date" type="datetime"/>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="match"
+                                 baseColumnNames="first_team_id"
+                                 constraintName="fk_match_team_first"
+                                 referencedTableName="team"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="match"
+                                 baseColumnNames="second_team_id"
+                                 constraintName="fk_match_team_second"
+                                 referencedTableName="team"
+                                 referencedColumnNames="id"/>
+    </changeSet>
 </databaseChangeLog>
 
