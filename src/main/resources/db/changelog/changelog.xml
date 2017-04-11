@@ -56,7 +56,7 @@
     </changeSet>
     <changeSet id="20170329-1" author="mkulewicz">
         <createTable tableName="match">
-            <column name="id" type="int" autoIncrement="true">
+            <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="first_team_id" type="int"/>
