@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "match")
+@Table(name = "\"match\"")
 public class Match {
     @Id
     @GeneratedValue

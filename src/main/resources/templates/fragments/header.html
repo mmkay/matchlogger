@@ -18,9 +18,12 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
             </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="team/list" th:href="@{/team/list}">Login with Google</a></li>
-                <li><a href="https://github.com/mmkay/matchlogger">Github</a></li>
+            <ul sec:authorize="isAnonymous()"  class="nav navbar-nav navbar-right">
+                <li><a href="/team/list" th:href="@{/team/list}">Log in with Google</a></li>
+            </ul>
+            <ul sec:authorize="isAuthenticated()"  class="nav navbar-nav navbar-right">
+                <li><a href="/team/list" th:href="@{/team/list}">Teams</a></li>
+                <li><a href="/match/list">Matches</a></li>
             </ul>
         </div>
     </div>

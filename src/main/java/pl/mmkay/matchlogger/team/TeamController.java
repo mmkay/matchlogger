@@ -25,9 +25,7 @@ public class TeamController {
     @GetMapping("list")
     public String list(Model model)
     {
-        model.addAttribute("teams", teamRepository.findAll());
-        model.addAttribute("allCountries", countryRepository.findAll());
-        model.addAttribute("newTeam", new TeamDto());
+        addTeamModel(model);
         return "team/list";
     }
 
@@ -43,9 +41,13 @@ public class TeamController {
         team.setCrestPhoto(teamDto.getCrestPhoto());
         teamRepository.save(team);
 
+        addTeamModel(model);
+        return "team/list";
+    }
+
+    private void addTeamModel(Model model) {
         model.addAttribute("teams", teamRepository.findAll());
         model.addAttribute("allCountries", countryRepository.findAll());
         model.addAttribute("newTeam", new TeamDto());
-        return "team/list";
     }
 }
