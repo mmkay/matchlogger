@@ -25,8 +25,7 @@ public class MatchController {
     @GetMapping("list")
     public String list(Model model)
     {
-        model.addAttribute("matches", matchRepository.findAll());
-        model.addAttribute("teams", teamRepository.findAll());
+        setModelAttributes(model);
         return "match/list";
     }
 
@@ -37,9 +36,14 @@ public class MatchController {
         }
 
         matchRepository.save(match);
-        model.addAttribute("matches", matchRepository.findAll());
-        model.addAttribute("teams", teamRepository.findAll());
+        setModelAttributes(model);
 
         return "match/list";
+    }
+
+    private void setModelAttributes(Model model) {
+        model.addAttribute("matches", matchRepository.findAll());
+        model.addAttribute("teams", teamRepository.findAll());
+        model.addAttribute("newMatch", new Match());
     }
 }
