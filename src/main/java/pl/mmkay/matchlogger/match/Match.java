@@ -1,5 +1,6 @@
 package pl.mmkay.matchlogger.match;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import pl.mmkay.matchlogger.team.Team;
 
 import javax.persistence.*;
@@ -17,6 +18,7 @@ public class Match {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "second_team_id")
     private Team secondTeam;
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
     private LocalDateTime matchDate;
 
     public long getId() {
